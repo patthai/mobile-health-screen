@@ -21,12 +21,12 @@ jQuery( document ).ready(function( $ ) {
 		$inputs.prop("disabled", true);
 		$("#final_question").hide();
 		$('#status').html('<h3>Submitting...</h3>');
-		setTimeout(function(){window.location.assign("question_finish.html");}, 2500);
+		setTimeout(function(){window.location.assign("analysis.html");}, 2500);
 		
 	
 		// fire off the request to /form.php
 		request = $.ajax({
-			url: "https://script.google.com/macros/s/AKfycbw3Ash78NCq4W8AbXXWeSP7C8btN79HK3p5IuBfZNqzjDTjIrA/exec",
+			url: "https://script.google.com/macros/s/AKfycbz3ndXCQGkZ7iC2iiqtvjOlovFofX7BGOuujGQwd6RUhd_MyRQ/exec",
 			type: "post",
 			data: serializedData
 		});
@@ -34,7 +34,7 @@ jQuery( document ).ready(function( $ ) {
 		// callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR){
 			// log a message to the console
-			window.location.assign("question_finish.html");
+			window.location.assign("analysis.html");
 		});
 	
 		// callback handler that will be called on failure

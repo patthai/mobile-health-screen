@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <title>MHealth</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/post_to_sheet.js"></script>
+    
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <h1 class="title">MHealth</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+      <p class="content-padded">ขอบคุณสำหรับคำตอบ กดวิเคราะห์ข้อมูลเพื่อดูผลการวิเคราห์ข้อมูล</p>
+
+
+
+<form id="post_data">
+        			<div style="display: none;">
+        			<input name="p_user_gender" id="post_user_gender" type="text" value="">
+        			<input name="p_user_edu" id="post_user_edu" type="text" value="">
+					<input name="p_user_job" id="post_user_job" type="text" value="">
+					<input name="p_user_personal_background" id="post_user_personal_background" type="text" value="">
+					<input name="p_user_family_background" id="post_user_family_background" type="text" value="">
+					<input name="p_user_question_1" id="post_user_question_1" type="text" value="">
+					<input name="p_user_question_1_sum" id="post_user_question_1_sum" type="text" value="">
+					<input name="p_user_question_2" id="post_user_question_2" type="text" value="">
+					<input name="p_user_question_2_sum" id="post_user_question_2_sum" type="text" value="">
+					
+					</div>
+					
+					<p class="content-padded">
+					<input type="submit" value="วิเคราะห์ข้อมูล"  id = "status" onclick ="update_status()"  class="btn btn-block">
+					</p>
+    				
+    			</form>
+
+
+</div>
+    
+    
+    
+    
+   
+
+  </body>
+  
+  <script>
+  		function update_status()
+  		{
+  		document.getElementById("status").innerHTML  = "Submitting";
+    	}
+    	
+    	document.getElementById("post_user_gender").value = localStorage.getItem("user_gender");
+    	document.getElementById("post_user_edu").value = localStorage.getItem("user_edu");
+    	document.getElementById("post_user_job").value = localStorage.getItem("user_job");
+    	document.getElementById("post_user_personal_background").value = localStorage.getItem("user_personal_background");
+    	document.getElementById("post_user_family_background").value = localStorage.getItem("user_family_background");
+    	document.getElementById("post_user_question_1").value = localStorage.getItem("user_question_1");
+    	document.getElementById("post_user_question_1_sum").value = localStorage.getItem("user_question_1_sum");
+    	document.getElementById("post_user_question_2").value = localStorage.getItem("user_question_2");
+    	document.getElementById("post_user_question_2_sum").value = localStorage.getItem("user_question_2_sum");
+
+    </script>
+
+
+</html>

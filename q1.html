@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+     <title>MHealth</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <h1 class="title">MHealth</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+           <p class="content-padded">แบบประเมินพฤติกรรมเสี่ยงต่อโรคมะเร็งท่อน้ำดี กรุณาตอบคำถามให้ตรงกับความจริงของท่านให้ครบทุกข้อ
+
+
+ 
+<p class="content-padded">- ทำเป็นประจำ  หมายถึง มีพฤติกรรมเสี่ยงทุกวัน เกือบทุกวัน หรือ ทุกสัปดาห์  </p>
+<p class="content-padded">- ทำบางครั้ง หมายถึง หลายสัปดาห์จึงมีพฤติกรรมเสี่ยงสักครั้ง หรือ ไม่เกิน 2-3 ครั้ง /เดือน</p>
+<p class="content-padded">- นานๆครั้ง  หมายถึง หลายเดือนจึงมีพฤติกรรมเสี่ยงสักครั้ง หรือในบางโอกาส ไม่บ่อย / นานๆครั้ง </p>
+<p class="content-padded">- ไม่เคยทำ  หมายถึง ไม่มีพฤติกรรมเสี่ยงเลย (ในรอบ 1 เดือน) หรือเลิกทำไปแล้ว</p>
+</p>
+ 
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">1) กินก้อยปลาดิบ/ก้อยปลา/ลาบปลา</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(1,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(1,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(1,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(1,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">2) กินส้มปลาดิบ</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(2,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(2,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(2,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(2,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">3) กินปลาจ่อมดิบ/ส้มปลาน้อย/ปลาจ่อม/ปลาเจ้าดิบ</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(3,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(3,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(3,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(3,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">4) กินส้มตำปลาร้าดิบ</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(4,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(4,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(4,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(4,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">5) กินแจ่วบองปลาร้าดิบ</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(5,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(5,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(5,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(5,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">6) ถ่ายอุจจาระลงแหล่งน้ำ เช่น ห้วย หนอง</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(6,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(6,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(6,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(6,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">7) ถ่ายอุจจาระลงตามพื้นดิน ตามสวน ทุ่งนา</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(7,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(7,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(7,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(7,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">8) ล้างมือก่อนประกอบอาหาร/ก่อน รับประทานอาหาร</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(8,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(8,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(8,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(8,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">9) ล้างมือหลังการถ่ายอุจจาระ</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(9,3)">ทำเป็นประจำ</a>
+  			<a class="control-item" onclick="save(9,2)">ทำบางครั้ง</a>
+  			<a class="control-item" onclick="save(9,1)">ทำนานๆครั้ง</a>
+  			<a class="control-item" onclick="save(9,0)">ไม่เคยทำ</a>
+  			</div></div>
+</div>
+
+<p class="content-padded">
+<button class="btn btn-block" onclick="nextpage()">หน้าต่อไป</button>
+</p>
+
+
+</div>
+    
+    
+    
+    
+   
+
+  </body>
+  
+<script>
+		var qarray=new Array
+    	function save(question, answer)
+    	{
+    		qarray[question] = answer
+    		//console.log (question, answer)
+    		console.log (qarray, qarray.length)
+		}
+		
+		 function nextpage() {
+			
+			 
+		 	question_1_sum = 0
+		 	for (var i = 1; i < qarray.length; i++) {
+		 		//console.log(qarray[i])
+		 		question_1_sum = question_1_sum +  qarray[i]
+		 		 
+			
+		 	
+		 	console.log(question_1_sum)
+		 	
+		 	localStorage.setItem("user_question_1", qarray)
+ 			localStorage.setItem("user_question_1_sum", question_1_sum)
+
+		 	
+		 	console.log("yeah")
+		 	window.location.href = "q2.html";
+		 	}
+		 
+		 }
+		
+</script>
+
+
+</html>

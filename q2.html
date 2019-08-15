@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+       <title>MHealth</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <h1 class="title">MHealth</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+      <p class="content-padded">แบบประเมินความรู้เรื่องโรคมะเร็งท่อน้ำดี  กรุณาตอบคำถามให้ตรงกับความจริงของท่านให้ครบทุกข้อ
+</p>
+
+ 
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">1) การกินยาเป็นการป้องกันโรคพยาธิใบไม้ตับได้ดีที่สุด</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(1,1)">ถูก</a>
+  			<a class="control-item" onclick="save(1,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">2) การกินปลาดิบเพียงเล็กน้อย ไม่ทำให้เป็นโรคพยาธิใบไม้ตับ</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(2,1)">ถูก</a>
+  			<a class="control-item" onclick="save(2,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">3) การกินกุ้งดิบ หอยดิบ ทำให้เป็นโรคพยาธิใบไม้ตับ</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(3,1)">ถูก</a>
+  			<a class="control-item" onclick="save(3,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">4) ไม่จำเป็นต้องตรวจอุจจาระก่อนกินยาถ่ายพยาธิใบไม้ตับ เพราะเป็นยาที่ปลอดภัย</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(4,1)">ถูก</a>
+  			<a class="control-item" onclick="save(4,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">5) การเป็นโรคพยาธิใบไม้ตับแบบซ้ำซากเพิ่มความเสี่ยงของการเกิดมะเร็งท่อน้ำดี</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(5,1)">ถูก</a>
+  			<a class="control-item" onclick="save(5,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">6) การกินปลาร้า หม่ำ/ส้ม/แหนม แบบดิบๆ เป็นสาเหตุร่วมของโรคมะเร็งท่อน้ำดี</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(6,1)">ถูก</a>
+  			<a class="control-item" onclick="save(6,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">7) เมื่อพบความผิดปกติที่ท่อน้ำดี ต้องอุลตราซาวน์ เพื่อค้นหาสาเหตุอย่างต่อเนื่องทุกปี</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(7,1)">ถูก</a>
+  			<a class="control-item" onclick="save(7,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">8) มะเร็งท่อน้ำดีในระยะเริ่มต้น สามารถรักษาหายขาดได้</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(8,1)">ถูก</a>
+  			<a class="control-item" onclick="save(8,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">9) ตัวเหลือง ตาเหลือง ปวดท้องใต้ชายโครง เป็นลักษณะอาการของโรคมะเร็งท่อน้ำดี</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="save(9,1)">ถูก</a>
+  			<a class="control-item" onclick="save(9,0)">ผิด</a>
+
+  			</div></div>
+</div>
+
+
+<p class="content-padded">
+<button class="btn btn-block" onclick="nextpage()">หน้าต่อไป</button>
+</p>
+
+
+
+
+
+</div>
+    
+    
+    
+    
+   
+
+  </body>
+  
+<script>
+		var qarray=new Array
+    	function save(question, answer)
+    	{
+    		qarray[question] = answer
+    		//console.log (question, answer)
+    		console.log (qarray, qarray.length)
+		}
+		
+		 function nextpage() {
+		
+		 	
+		 	question_2_sum = 0
+		 	for (var i = 1; i < qarray.length; i++) {
+		 		//console.log(qarray[i])
+		 		question_2_sum = question_2_sum +  qarray[i]
+		 		 
+			}
+		 	
+		 	console.log(question_2_sum)
+		 	
+		 	localStorage.setItem("user_question_2", qarray)
+ 			localStorage.setItem("user_question_2_sum", question_2_sum)
+
+		 	
+		 	console.log("yeah")
+		 	window.location.href = "save.html";
+		 	
+		 }
+</script>
+
+
+</html>

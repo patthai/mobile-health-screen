@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <title>MHealth</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <h1 class="title">MHealth</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+      <p class="content-padded">โปรดตอบคำถามให้่ตรงกับความจริงของท่านให้ครบทุกข้อ </p>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">1) เพศ</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="gender = 'ชาย'">ชาย</a>
+  			<a class="control-item" onclick="gender = 'หญิง'">หญิง</a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">2) การศึกษา</p>
+		
+			
+<p class="content-padded">
+<select id="edu">
+
+  <option value="null">โปรดเลือกคำตอบ</option>
+  <option value="ไม่ได้ศึกษา">ไม่ได้ศึกษา</option>
+  <option value="ประถมศึกษา">ประถมศึกษา</option>
+  <option value="มัธยมศึกษา">มัธยมศึกษา</option>
+  <option value="อนุปริญญา">อนุปริญญา</option>
+  <option value="ปริญญาตรี">ปริญญาตรี</option>
+  <option value="สูงกว่าปริญญาตรี">สูงกว่าปริญญาตรี</option>
+</select>
+</p>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">3) อาชีพหลัก</p>
+		
+			
+<p class="content-padded">
+<select id="job">
+
+  <option value="null">โปรดเลือกคำตอบ</option>
+  <option value="ไม่ได้ทำงาน">ไม่ได้ทำงาน หรือ ทำงานบ้าน</option>
+  <option value="นักเรียน">นักเรียน/ นักศึกษา</option>
+  <option value="รับราชการ">รับราชการ</option>
+  <option value="รัฐวิสาหกิจ">รัฐวิสาหกิจ</option>
+  <option value="พนักงานบริษัท ">พนักงานบริษัท </option>
+  <option value="ทำนา">ทำนา</option>
+  <option value="ทำไร่">ทำไร่/สวน</option>
+  <option value="ประมง">ประมง</option>
+  <option value="ค้าขาย">ค้าขาย</option>
+  <option value="รับจ้าง">รับจ้าง</option>
+ 
+</select>
+</p>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">4) ท่านเคยได้รับยาถ่ายพยาธิโรคพยาธิใบไม้ตับหรือไม่ (ในรอบ 1 ปี)</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="personal_background = 'เคย'" >เคย</a>
+  			<a class="control-item" onclick="personal_background = 'ไม่เคย'" >ไม่เคย</a>
+  			<a class="control-item" onclick="personal_background = 'ไม่แน่ใจ'" >ไม่แน่ใจ/ไม่ทราบ </a>
+  			</div></div>
+</div>
+
+<!-- QUESTION -->
+<div class="card"><p class="content-padded">5) บุคคลในครอบครัวของท่านเคยเจ็บป่วยด้วยโรคมะเร็งท่อน้ำดีหรือไม่</p>
+    	  <div class="content-padded"><div class="segmented-control">
+  			<a class="control-item" onclick="family_background = 'เคย'">เคย</a>
+  			<a class="control-item" onclick="family_background = 'ไม่เคย'">ไม่เคย</a>
+  			<a class="control-item" onclick="family_background = 'ไม่แน่ใจ'">ไม่แน่ใจ/ไม่ทราบ </a>
+  			</div></div>
+</div>
+
+<p class="content-padded">
+<button class="btn btn-block" onclick="nextpage()">หน้าต่อไป</button>
+</p>
+
+</div>
+    
+    
+
+    
+   
+
+  </body>
+  
+<script>
+var gender = ""
+var personal_background = ""
+var family_background = ""
+
+ function nextpage() {
+ 
+  
+  var select_edu = document.getElementById("edu");
+  var select_edu_value = select_edu.options[select_edu.selectedIndex].value;
+  
+  var select_job = document.getElementById("job");
+  var select_job_value = select_job.options[select_job.selectedIndex].value;
+  
+   	if (gender == ""){
+   	 window.alert("โปรดตอบคำถามให้ครบทุกข้อ");
+ 	}
+   	else if (select_edu_value == "null"){
+   	 window.alert("โปรดตอบคำถามให้ครบทุกข้อ");
+ 	}
+ 	 else if (select_job_value == "null"){
+   	 window.alert("โปรดตอบคำถามให้ครบทุกข้อ");
+ 	}
+ 	else if (personal_background == ""){
+   	 window.alert("โปรดตอบคำถามให้ครบทุกข้อ");
+ 	}
+ 	 else if (family_background == ""){
+   	 window.alert("โปรดตอบคำถามให้ครบทุกข้อ");
+ 	}
+ 	else{
+ 	localStorage.setItem("user_gender", gender)
+  	localStorage.setItem("user_edu", select_edu_value)
+  	localStorage.setItem("user_job", select_job_value)
+  	localStorage.setItem("user_personal_background", personal_background)
+  	localStorage.setItem("user_family_background", family_background)
+	console.log("YEAH")
+	window.location.href = "q1.html";
+ 	}
+  
+  console.log(gender, select_edu_value, select_job_value, personal_background, family_background)
+  
+ 
+  
+  
+}
+
+</script>
+
+
+</html>
